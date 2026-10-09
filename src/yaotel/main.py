@@ -1,15 +1,5 @@
-"""Точка входа минимального API ЯОтель."""
+"""ASGI entry point; route logic lives in the API module."""
 
-from fastapi import FastAPI
+from yaotel.api import create_app
 
-app = FastAPI(
-    title="ЯОтель API",
-    version="0.1.0",
-    description="Учебный API системы бронирования и управления гостиницей.",
-)
-
-
-@app.get("/health", tags=["health"], summary="Проверить доступность сервиса")
-def health() -> dict[str, str]:
-    """Возвращает минимальный ответ для health-check без раскрытия конфигурации."""
-    return {"status": "ok"}
+app = create_app()
