@@ -19,7 +19,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     engine, session_factory = create_database(runtime_settings.database_url)
     app = FastAPI(
         title="ЯОтель API",
-        version="0.2.0",
+        version="0.1.0",
         description="Учебный API поиска доступных номеров и создания бронирований.",
     )
     app.state.settings = runtime_settings
