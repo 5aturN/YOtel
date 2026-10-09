@@ -30,8 +30,8 @@ class PriceCalculatorTests(unittest.TestCase):
             PriceCalculator.calculate_total_kopecks(0, date(2030, 1, 4), date(2030, 1, 5))
 
     def test_rounds_to_a_whole_kopeck(self) -> None:
-        total = PriceCalculator.calculate_total_kopecks(1, date(2030, 1, 4), date(2030, 1, 5))
-        self.assertEqual(total, 1)
+        total = PriceCalculator.calculate_total_kopecks(10, date(2030, 1, 4), date(2030, 1, 5))
+        self.assertEqual(total, 12)
 
 
 if __name__ == "__main__":
