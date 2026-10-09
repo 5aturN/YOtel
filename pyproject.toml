@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yaotel"
+version = "0.1.0"
+description = "Учебный API системы бронирования и управления гостиницей ЯОтель"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "sqlalchemy>=2.0,<3.0",
+  "uvicorn>=0.30,<1.0",
+  "psycopg[binary]>=3.2,<4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx2>=2.0,<3.0",
+  "pytest>=8.4,<10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
